@@ -1,0 +1,42 @@
+#container{
+max-width: 1300px;
+height: 550px;
+position: relative;
+border:2px solid black;
+/*text-align: center;*/
+background:radial-gradient(circle at center, #FFFFFF, #03AACC);	
+
+}
+
+#clock{
+position:  absolute;
+margin: 0 auto;
+font-size: 30px;
+/*Horizontal centering*/
+top:50%;
+-webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+/*vertical centering*/
+left:50%;
+-webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+
+}
+
+
+/*$('a').hover( 
+  function() {
+    $(this)
+      .css('color','blue')
+      .animate({'color': 'red'}, 400);
+  },
+  function() {
+    $(this)
+      .animate({'color': 'blue'}, 400);
+  }
+);*/
+
+
