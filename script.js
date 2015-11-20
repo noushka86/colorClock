@@ -47,8 +47,6 @@ updateTime()
 
 				progBar.style.width=s*10;
 
-
-
 			}
 		 	  
 		
@@ -56,8 +54,6 @@ updateTime()
 function toHex(num){
 		return addZiro((Math.round(num)).toString(16));
 	}
-
-
 
 
 function generateClockColor(){
