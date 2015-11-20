@@ -1,7 +1,8 @@
 
-	window.onload=function(){
-		var clockEl=document.getElementById('clock');
-		var containerEl=document.getElementById('container');
+window.onload=function(){
+		var clockEl=document.getElementById('clock'),
+			containerEl=document.getElementById('container'),
+			bodyEl=document.getElementById('body')
 	
 		var currentTime;
 		var status="digital";
@@ -11,7 +12,7 @@
 		clockEl.onmouseover=changeClockToHex;
 	    clockEl.onmouseout=changeClockToDigital;
 
-		setInterval(updateTime,1000);
+		setInterval(updateTime,500);
 		
 function changeClockToHex(){
 status="hex";
@@ -40,9 +41,8 @@ updateTime()
 		clockEl.innerHTML=currentTime;
 				}
 
-				containerEl.style.background='radial-gradient('
-        + 'circle at center' + ', ' + "#FFFFFF"+ ', ' + 
-        generateClockColor() + ')';
+				containerEl.style.background=generateClockColor();
+				bodyEl.style.background=generateClockColor();
 
 		
 
@@ -56,20 +56,7 @@ function toHex(num){
 	}
 
 
-function tohexClock(){
-	
-	var d=new Date(), 
-				h=d.getHours(),
-				m=d.getMinutes(),
-				s=d.getSeconds();
-		var hexSeconds=toHex(s*255/60);
-		var hexMinutes=toHex(m*255/60);
-		var hexHours=toHex(h*255/24);
-		currentTime=addZiro(hexHours)+":"+addZiro(hexMinutes)+":"
-		+addZiro(hexSeconds);
 
-
-}
 
 function generateClockColor(){
 	var d=new Date(), 
