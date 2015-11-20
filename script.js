@@ -2,6 +2,7 @@ window.onload=function(){
 		var clockEl=document.getElementById('clock'),
 			containerEl=document.getElementById('container'),
 			bodyEl=document.getElementById('body')
+			progBar=document.getElementById('bar')
 	
 		var currentTime;
 		var status="digital";
@@ -11,7 +12,8 @@ window.onload=function(){
 		clockEl.onmouseover=changeClockToHex;
 	    clockEl.onmouseout=changeClockToDigital;
 
-		setInterval(updateTime,500);
+		var id=setInterval(updateTime,500);
+		
 		
 function changeClockToHex(){
 status="hex";
@@ -43,7 +45,8 @@ updateTime()
 				containerEl.style.background=generateClockColor();
 				bodyEl.style.background=generateClockColor();
 
-		
+				progBar.style.width=s*10;
+
 
 
 			}
@@ -80,29 +83,6 @@ function addZiro(num){
 	}
 	return complete;
 }
-
-
-
-}
-Hex(s*255/60);
-		var hexMinutes=toHex(m*255/60);
-		var hexHours=toHex(h*255/24);
-
-		color = '#' + hexHours + hexMinutes + hexSeconds;
-		// console.log(color);
-		return color;
-
-}
-
-
-function addZiro(num){
-	var complete=num+"";
-	if(complete.length===1){
-		 complete="0"+num;
-	}
-	return complete;
-}
-
 
 
 }
